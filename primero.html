@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cósmico</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            overflow: hidden;
+        }
+
+        .card {
+            width: 350px;
+            padding: 30px;
+            text-align: center;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            color: white;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+            transition: transform 0.4s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #38bdf8;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0ea5e9;
+            box-shadow: 0 0 15px #38bdf8;
+        }
+
+        .orb {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #38bdf8, transparent);
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: float 6s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            from {
+                transform: translate(-80px, -50px);
+            }
+            to {
+                transform: translate(80px, 50px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="orb"></div>
+
+    <div class="card">
+        <h1>🚀 Portal Cósmico</h1>
+        <p>Pulsa el botón para descubrir un mensaje del universo.</p>
+        <button onclick="mensaje()">Explorar</button>
+        <p id="resultado" style="margin-top:20px;"></p>
+    </div>
+
+    <script>
+        const frases = [
+            "✨ Hoy es un buen día para crear algo increíble.",
+            "🌌 La curiosidad abre nuevas galaxias.",
+            "💡 Cada línea de código es una semilla de ideas.",
+            "🚀 Tu próximo proyecto puede cambiarlo todo.",
+            "⭐ Sigue experimentando, así nacen las grandes innovaciones."
+        ];
+
+        function mensaje() {
+            const aleatorio = Math.floor(Math.random() * frases.length);
+            document.getElementById("resultado").textContent = frases[aleatorio];
+        }
+    </script>
+
+</body>
+</html>
